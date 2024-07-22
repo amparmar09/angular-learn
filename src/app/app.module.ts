@@ -15,15 +15,30 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatSelectModule } from '@angular/material/select';
 import { UserService } from './services/user.service';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatTableModule } from '@angular/material/table'; 
+import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+import { CommonComponent } from './common/common.component';
+import { SchoolComponent } from './components/school/school.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DashboardComponent,
+    NavbarComponent,
+    SidenavComponent,
+    CommonComponent,
+    SchoolComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,9 +57,14 @@ import { MatSortModule } from '@angular/material/sort';
     MatSelectModule,
     MatAutocompleteModule,
     HttpClientModule,
-    MatTableModule ,
+    MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatSidenavModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatDividerModule,
+    MatListModule
   ],
   providers: [
     UserService

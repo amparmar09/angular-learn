@@ -1,0 +1,265 @@
+.example-card {
+    width: 30%;
+    // align-content: center;
+    margin: 5%;
+
+}
+
+.input_first {
+    width: 80%;
+}
+
+.input_middle {
+    width: 80%;
+}
+
+.input_last {
+    width: 80%;
+}
+
+.input_email {
+    width: 80%;
+}
+
+.input_pass {
+    width: 80%;
+}
+
+.mate-date {
+    width: 80%;
+}
+
+.city{
+    width: 80%;
+}
+
+.country{
+    width: 80%;
+    
+}
+
+.gender {
+    margin-left: 1%;
+}
+
+.input_phone{
+    width: 80% ;
+}
+
+.input_pincode{
+    width: 80%;
+}
+
+
+.datepicker {
+    position: absolute;
+    margin-left: -15%;
+    margin-top: -5%;
+}
+
+::ng-deep .mat-horizontal-stepper-header-container {
+    display: none !important;
+}
+
+.arrow_b {
+    margin-left: -3%;
+}
+
+.arrow_f {
+    margin-right: 18%;
+}
+
+.mat-stepper-content {
+    padding: 0 !important;
+}
+
+.button {
+    margin-top: 5%;
+
+}
+
+.mat-form-field-infix {
+    height: 20px !important;
+}
+
+
+@media only screen and (max-width: 320px) {
+    .input_first {
+        margin-left: 10% !important;
+    }
+
+    .input_middle {
+        margin-left: 10% !important;
+    }
+
+    .input_last {
+        margin-left: 10% !important;
+    }
+
+    .input_email {
+        margin-left: 10% !important;
+    }
+
+    .input_pass {
+        margin-left: 10% !important;
+    }
+
+    .mate-date {
+        margin-left: 10% !important;
+    }
+
+    // .gender {
+    //     margin-left: 10% !important;
+    // }
+
+    .city{
+        margin-left: 10% !important;
+    }
+
+    .country{
+        margin-left: 10% !important;
+    }
+
+    .input_phone{
+        margin-left: 10% !important;
+    }
+
+    // .arrow_b {
+    //     margin-left: 4%;
+    // }
+    
+    .arrow_f {
+        margin-right: 5%;
+    }   
+
+    .input_pincode{
+        margin-left: 10% !important;
+    }
+    
+}
+
+@media only screen and (max-width: 375px) {
+    .input_first {
+        margin-left: 10% !important;
+    }
+
+    .input_middle {
+        margin-left: 10% !important;
+    }
+
+    .input_last {
+        margin-left: 10% !important;
+    }
+
+    .input_email {
+        margin-left: 10% !important;
+    }
+
+    .input_pass {
+        margin-left: 10% !important;
+    }
+
+    .mate-date {
+        margin-left: 10% !important;
+    }
+
+    .state{
+        margin-left: 10% !important;
+    }
+
+    .country{
+        margin-left: 10% !important;
+    }
+
+    .country{
+        margin-left: 10% !important;
+    }
+
+    .gender {
+        margin-left: 10% !important;
+    }
+
+    // .arrow_b {
+    //     margin-left: 8% !important;
+    // }
+    
+    .arrow_f {
+        margin-right: 5%;
+    }   
+
+    .input_phone{
+        margin-left: 10% !important;
+    }
+
+    .input_pincode{
+        margin-left: 10% !important;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .input_first {
+        margin-left: 10% !important;
+    }
+
+    .input_middle {
+        margin-left: 10% !important;
+    }
+    
+    .input_last {
+        margin-left: 10% !important;
+    }
+
+    .input_email {
+        margin-left: 10% !important;
+    }
+
+    .input_pass {
+        margin-left: 10% !important;
+    }
+
+    .mate-date {
+        margin-left: 10% !important;
+    }
+
+    .state{
+        margin-left: 10% !important;
+    }
+
+    .city{
+        margin-left: 10% !important;
+    }
+
+    .country{
+        margin-left: 10% !important;
+    }
+
+    .gender {
+        margin-left: 10% !important;
+    }
+
+    // .arrow_b {
+    //     margin-left: -1% !important;
+    // }
+    
+    .arrow_f {
+        margin-right: 5%;
+    }
+
+    .input_phone{
+        margin-left: 10% !important;
+    }
+
+    .input_pincode{
+        margin-left: 10% !important;
+    }  
+    
+    .mat-focus-indicator {
+        margin-left: 15% !important;
+    }
+}
+
+@media only screen and (max-width:768px){
+    .button{
+        margin-left: -18% !important;
+    }
+}

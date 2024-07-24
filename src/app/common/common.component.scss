@@ -1,0 +1,17 @@
+table {
+    width: 50%;
+}
+
+.card-map {
+    display: flex;
+    justify-content: center;
+}
+
+.sticky-paginator {
+    margin-top: 20%;
+    position: sticky;
+    bottom: 0;  
+    z-index: 1000; 
+    margin-left: -32%;
+  }
+  

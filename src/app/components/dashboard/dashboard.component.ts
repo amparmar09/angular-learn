@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 
@@ -23,8 +24,7 @@ const ELEMENT_DATA: any[] = [
 export class DashboardComponent implements OnInit {
   showFiller = false
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
-
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
   constructor() { }
 
   ngOnInit(): void {

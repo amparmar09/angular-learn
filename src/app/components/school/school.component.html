@@ -1,1 +1,43 @@
-<app-common [displayedcolumns]="displayedColumns" [data]="dataSource"></app-common>
+<div class="flex gap-4 m-5 flex-wrap">
+    <div class="card">
+        <h4>Total Page Views</h4>
+        <div class="flex items-center gap-2">
+            <span class="mb-2 border border-blue-500 bg-blue-200">
+                <mat-icon>show_chart</mat-icon>59.3%
+            </span>
+        </div>
+
+    </div>
+    <div class="card">
+        <h4>Total Users</h4>
+        <div class="flex items-center gap-2">
+            <span class="mb-2 border border-blue-500 bg-blue-200">
+                <mat-icon>show_chart</mat-icon>59.3%
+            </span>
+        </div>
+
+    </div>
+    <div class="card">
+        <h4>Total Order</h4>
+        <div class="flex items-center gap-2">
+            <span class="mb-2 border border-yellow-500 bg-yellow-200">
+                <mat-icon>show_chart</mat-icon>59.3%
+            </span>
+        </div>
+
+    </div>
+    <div class="card">
+        <h4>Total Sales</h4>
+        <div class="flex items-center gap-2">
+            <span class="mb-2 border border-yellow-500 bg-yellow-200">
+                <mat-icon>show_chart</mat-icon>59.3%
+            </span>
+        </div>
+
+    </div>
+</div>
+<div class="ml-5">
+    <div class="card-map">
+        <app-common [displayedcolumns]="displayedColumns" [data]="dataSource"></app-common>
+    </div>
+</div>

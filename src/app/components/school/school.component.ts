@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 const ELEMENT_DATA: any[] = [
@@ -21,7 +22,7 @@ const ELEMENT_DATA: any[] = [
 })
 export class SchoolComponent implements OnInit {
   displayedColumns: string[] = ['firstname', 'lastname', 'email', 'city', 'state', 'country'];
-  dataSource = ELEMENT_DATA;
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
   constructor() { }
 
   ngOnInit(): void {

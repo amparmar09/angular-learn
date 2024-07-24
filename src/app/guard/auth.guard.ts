@@ -6,33 +6,18 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
+  loginForm: any;
+  router: any;
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
-  }
-  
-  
-    register(user: any): void {
-     
-      localStorage.setItem('user', JSON.stringify(user));
-    }
-  
-    login(email: string, password: string): boolean {
-     
-      const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
-      if (storedUser && storedUser.email === email && storedUser.password === password) {
-        localStorage.setItem('loggedIn', 'true');
+      let user = sessionStorage.getItem('userData')
+      if (user != null) {
         return true;
-      }
-      return false;
-    }
-  
-    isLoggedIn(): boolean {
-     return localStorage.getItem('loggedIn') === 'true';
-    }
-  
-    logout(): void {
-           localStorage.removeItem('loggedIn');
-    }
+      } else {
+        this.router.navigate(['/login'])
+        return false
+      }  
+  }
+
 }

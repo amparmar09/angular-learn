@@ -1,5 +1,5 @@
-<section class="vh-100">
-    <div class="container-fluid h-custom">
+<section class="vh-100 " >
+    <div class="container-fluid h-custom card">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-md-9 col-lg-6 col-xl-5">
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
@@ -27,13 +27,17 @@
                         <mat-error
                             *ngIf="loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched)">
                             <span *ngIf="loginForm.controls.password.errors?.required">Password is required.</span>
+                            <span *ngIf="loginForm.controls.password.errors?.minlength">Password must be at least 6
+                                characters long.</span>
+                            <span *ngIf="loginForm.controls.password.errors?.maxlength">Password cannot be 20 characters
+                                long.</span>
                         </mat-error>
                     </mat-form-field>
 
 
                     <div class="text-center text-lg-start pt-2">
                         <button type="submit" mat-raised-button color="primary" class="btn-lg"
-                            style="padding-left: 2.5rem; padding-right: 2.5rem;" >Login</button>
+                            style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="onSubmit()" >Login</button>
                         <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="register"
                                 class="link-danger">Register</a></p>
                     </div>

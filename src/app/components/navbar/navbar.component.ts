@@ -1,4 +1,4 @@
-import { Component, OnInit,Input, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 
 @Component({
@@ -7,17 +7,17 @@ import { MatDrawer } from '@angular/material/sidenav';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-@Input() navbar:any
-@Input() drawer!: MatDrawer; 
-@Output() toggleNav = new EventEmitter();
+  isOpen: boolean = true;
+  @Input() navbar: any
+  @Input() drawer!: MatDrawer;
+  @Output() sideNav: EventEmitter<any> = new EventEmitter()
 
   constructor() { }
-  isOpen = false; 
+
   ngOnInit(): void {
   }
 
   toggle() {
-    this.isOpen = !this.isOpen;  
-    this.toggleNav.emit(); 
-  } 
+    this.sideNav.emit(this.isOpen = !this.isOpen)
+  }
 }

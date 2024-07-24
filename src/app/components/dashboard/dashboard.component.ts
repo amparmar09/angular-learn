@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 
-
-
 const ELEMENT_DATA: any[] = [
   { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
   { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
@@ -21,13 +19,25 @@ const ELEMENT_DATA: any[] = [
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
+
 export class DashboardComponent implements OnInit {
   showFiller = false
+  sidenavOpen: boolean = true
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   constructor() { }
-
   ngOnInit(): void {
+
   }
+
+
+  sideNav(event: any) {
+
+    this.sidenavOpen = event
+    console.log(event);
+
+  }
+
+
 
 }

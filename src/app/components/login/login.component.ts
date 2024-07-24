@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthGuard } from 'src/app/guard/auth.guard';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +11,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   hide: boolean = true
   loginForm: FormGroup | any
-  constructor(private formbuilder: FormBuilder) { }
-
+  authService: any;
+  constructor(private formbuilder: FormBuilder, private router: Router, private authguard: AuthGuard) { }
   ngOnInit(): void {
     this.createform()
   }
@@ -18,32 +20,21 @@ export class LoginComponent implements OnInit {
   createform() {
     this.loginForm = this.formbuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]]
+      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20)]]
     })
   }
 
-  onSubmit(user: any) {
-    console.log(this.loginForm.value)
-
-
-    localStorage.setItem('user', JSON.stringify(user));
-
-
-    // if (this.loginForm.valid) {
-    //   const email = this.loginForm.value.email;
-    //   const password = this.loginForm.value.password;
-
-    //   if (this.authService.login(email, password)) {
-
-    //     this.router.navigate(['/dashboard']);
-    //   } else {
-
-    //     alert('Invalid credentials. Please try again.');
-    //   }
-    // } else {
-
-    //   this.loginForm.markAllAsTouched();
-    // }
+  onSubmit() {
+    const storedUser = JSON.parse(sessionStorage.getItem('userData') || '{}');
+    if (storedUser && storedUser.email === this.loginForm.value.email && storedUser.password === this.loginForm.value.password) {
+      sessionStorage.setItem('isloggedIn', 'true');
+      this.router.navigate(['/dashboard'])
+      // console.log('isloggedin', storedUser);
+      return true;
+    } else {
+      alert('Invalid Login')
+      return false;
+    }
 
   }
 

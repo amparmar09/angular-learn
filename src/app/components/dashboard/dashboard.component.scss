@@ -15,3 +15,17 @@
   table {
     width: 50%;
   }
+.button_a{
+  display: flex;
+  justify-content: end;
+}
+
+// :: ng-deep .mat-dialog-container ng-tns-c80-8 ng-trigger ng-trigger-dialogContainer ng-star-inserted{
+// height: 350px;
+// width: 350px;
+// }
+
+.cdk-overlay-pane{
+  height: 350px !important;
+  width: 350px !important;
+}

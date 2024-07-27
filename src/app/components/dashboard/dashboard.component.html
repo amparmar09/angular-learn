@@ -44,6 +44,10 @@
                 </div>
             </div>
             <div class="ml-5">
+                <div class="button_a">
+                    <button type="submit" mat-raised-button color="primary" 
+                    style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="openDialog()">Add Data</button>
+                </div>
                 <div class="card-map">
                     <app-common [displayedcolumns]="displayedColumns" [data]="dataSource"></app-common>
                 </div>

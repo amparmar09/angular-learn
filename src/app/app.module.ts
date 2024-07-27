@@ -32,6 +32,8 @@ import { CommonComponent } from './common/common.component';
 import { SchoolComponent } from './components/school/school.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { CommonDailogComponent } from './components/common-dailog/common-dailog.component';
 
 
 @NgModule({
@@ -44,6 +46,7 @@ import { RegisterComponent } from './components/register/register.component';
     SchoolComponent,
     LoginComponent,
     RegisterComponent,
+    CommonDailogComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +72,8 @@ import { RegisterComponent } from './components/register/register.component';
     MatMenuModule,
     MatToolbarModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
   ],
   providers: [
     UserService

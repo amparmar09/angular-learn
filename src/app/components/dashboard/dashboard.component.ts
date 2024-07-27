@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { CommonDailogComponent } from '../common-dailog/common-dailog.component';
+
+
 
 const ELEMENT_DATA: any[] = [
   { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
@@ -14,6 +18,11 @@ const ELEMENT_DATA: any[] = [
   { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
 ];
 
+export interface DialogData {
+  animal: string;
+  name: string;
+}
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -25,19 +34,26 @@ export class DashboardComponent implements OnInit {
   sidenavOpen: boolean = true
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
-  constructor() { }
+  firstname: any;
+  lastname: any;
+  email: any;
+  constructor(public dialog: MatDialog) { }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(CommonDailogComponent, {
+      width: '50%',
+      data: { firstname: this.firstname, lastname: this.lastname, email: this.email },
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.lastname = result;
+    });
+  }
   ngOnInit(): void {
-
   }
-
-
   sideNav(event: any) {
-
     this.sidenavOpen = event
-    console.log(event);
-
   }
-
-
 
 }
+
